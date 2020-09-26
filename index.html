@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <title>After Covid Scene</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
   </head>
-  <body>
-    <a-scene>
-      <!--Assets for the project-->
-      <a-assets>
-        <a-asset-item id="house" src="assets/models/house.gltf"></a-asset-item>
-      </a-assets>
 
+<body>
+	<a-scene>
+    <!--Camera-->
+    <a-camera position="2.883 2 3.015"></a-camera>
 
-    <!-- House -->
-    <a-entity gltf-model="#house"></a-entity>
+    <!--Sky-->
+    <a-sky src="url(assets/sky.jpg)"></a-sky>
 
-    </a-scene>
-  </body>
+    <!--Ground-->
+    <a-plane width="50" height="50" src="url(assets/ground.jpg)" rotation="-90 0 0" repeat="10 10"></a-plane> 
+
+    <!--Creating the room for the inside covid part-->
+		<rw-room position="0 1 0" material="color:#787">
+      <rw-ceiling position="0 0 0" material="color:#866"></rw-ceiling>
+      <rw-floor position="0 0 0" material="src:url(assets/floor.png); repeat: 2 2"></rw-floor>
+      <rw-wall position="6 0 0" height="3"></rw-wall>
+			<rw-wall position="4 0 6" height="3"></rw-wall>
+			<rw-wall position="0 0 6" height="3"></rw-wall>
+			<rw-wall position="0 0 0" height="3">
+          <rw-doorhole id="holeA"></rw-doorhole>
+		  		<rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
+			</rw-wall>
+    </rw-room>
+		<rw-room position="0 0 -3" outside="true">
+			<rw-wall position=" 1 0  1" material="color:#877">
+				<rw-doorhole id="holeB"></rw-doorhole>
+			</rw-wall>
+    </rw-room>
+    
+	</a-scene>
+</body>
 </html>
 
