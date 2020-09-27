@@ -6,6 +6,12 @@
     <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
   </head>
 
+  <script>
+    function changeColor(color) {
+        document.querySelector('#light').emit(color);
+      };
+  </script>
+
 <body>
 	<a-scene>
     <!--Camera-->
@@ -49,8 +55,8 @@
     <a-gltf-model id="og_cup"   src="url(assets/og_cup.glb)" scale=".0095 .0095 .0095" position=".288 1.718 1.928" rotation="0 90 0"></a-gltf-model>
     <!--OG cup-->
     <a-gltf-model id="og_die"   src="url(assets/og_die.glb)" scale=".07 .07 .07" position=".039 1.056 -0.277" rotation="0 45 0" > </a-gltf-model>
-    
-	</a-scene>
+
+   	</a-scene>
 </body>
 </html>
 
