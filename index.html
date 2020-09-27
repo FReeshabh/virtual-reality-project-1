@@ -1,56 +1,62 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Virtual reality project 1</title>
-    <meta name="description" content="Rishabh Tewari">
+    <title>After Covid Scene</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-animation-component@^4.1.2/dist/aframe-animation-component.min.js"></script>  <!--For Animation-->
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
   </head>
-  <body>
-    <a-scene>
-      <a-assets>
-        <!-- <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg"> -->
-        <!-- <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg"> -->
-        <img id="skyTexture" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Sky.jpg">
-      </a-assets>
 
-      <!--Setting up the ground and sky-->
-      <a-entity id="sky" geometry="primitive: sphere; thetaLength: 95; radius: 100" material="side: back; height: 2048; width: 2048; src: #skyTexture; shader: flat"></a-entity>
-      <a-entity id="ground" geometry="primitive: plane; height: 160; width: 160"
-                material="src: url(assets/grassTex.png); roughness:.9; repeat: 50 50" rotation="-90 0 0"></a-entity>
+  <script>
+    function changeColor(color) {
+        document.querySelector('#light').emit(color);
+      };
+  </script>
 
+<body>
+	<a-scene>
+    <!--Camera-->
+    <a-camera position="2.883 2 3.015"></a-camera>
 
-     <!-- Decorations -->
-      <a-gltf-model id="fox" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Fox/glTF/Fox.gltf" position="5 0 -10" scale="0.01 0.01 0.01"></a-gltf-model>
-      <a-gltf-model id="rusty_car" src="url(assets/old_rusty_car/scene.gltf)" position="-5 0 -20" scale="0.01 0.01 0.01" rotation="0 -90 0"></a-gltf-model>
-      <a-gltf-model id="sofa" src="url(assets/sofa/scene.gltf)" position="-5 1 -5" scale="0.1 0.1 0.1" rotation="0 0 0"></a-gltf-model>
-      <a-gltf-model id="duck" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf" scale=".25 .25 .25" position="1 1.25 2.5"></a-gltf-model>
-      <a-gltf-model id="chair" src="url(assets/chair/scene.gltf)" scale="1 1 1" position="6 0 0"></a-gltf-model>
-      <a-gltf-model id="bed"   src="url(assets/bed/scene.gltf)" scale=".7 .7 .7" position="-7 0 0"></a-gltf-model>
-      
+    <!--Sky-->
+    <a-sky src="url(assets/sky.jpg)"></a-sky>
 
-      <a-gltf-model id="tree_2_1" src="url(assets/tree_2/scene.gltf)" scale="0.007 0.007 0.007" position="0 4 -90"></a-gltf-model>
-      <a-gltf-model id="tree_2_2" src="url(assets/tree_2/scene.gltf)" scale="0.007 0.007 0.007" position="40 2 -90"></a-gltf-model>
-      <a-gltf-model id="tree_2_3" src="url(assets/tree_2/scene.gltf)" scale="0.007 0.007 0.007" position="0 4 90"></a-gltf-model>
-      <a-gltf-model id="tree_2_4" src="url(assets/tree_2/scene.gltf)" scale="0.007 0.007 0.007" position="40 3 90"></a-gltf-model>
-      <a-gltf-model id="tree_2_5" src="url(assets/tree_2/scene.gltf)" scale="0.007 0.007 0.007" position="40 3 90"></a-gltf-model>
-      <a-gltf-model id="tree_2_6" src="url(assets/tree_2/scene.gltf)" scale="0.007 0.007 0.007" position="20 5 35"></a-gltf-model>
-      
-      <!--OG Models-->
-      <a-gltf-model id="og_table" src="url(assets/og_table.glb)" scale=".05 .05 .05"></a-gltf-model>
-      <a-gltf-model id="og_cup"   src="url(assets/og_cup.glb)" scale=".009 .009 .009" position="0 1.25 0"></a-gltf-model>
-      <a-gltf-model id="og_die"   src="url(assets/og_die.glb)" scale=".07 .07 .07" position="4 0 0" > </a-gltf-model>
+    <!--Ground-->
+    <a-plane width="50" height="50" src="url(assets/ground.jpg)" rotation="-90 0 0" repeat="10 10"></a-plane> 
 
+    <!--Creating the room for the inside covid part-->
+		<rw-room position="0 1 0" material="color:#C5EAFA; src:url(assets/wall.jpg); repeat: 2 2">
+      <rw-ceiling position="0 0 0" material="color:#FFF; src:url(assets/ceiling.jpg); repeat:50 50"></rw-ceiling>
+      <rw-floor position="0 0 0" material="src:url(assets/floor.png); repeat: 2 2"></rw-floor>
+      <rw-wall position="6 0 0" height="3"></rw-wall>
+			<rw-wall position="4 0 6" height="3"></rw-wall>
+			<rw-wall position="0 0 6" height="3"></rw-wall>
+			<rw-wall position="0 0 0" height="3">
+          <rw-doorhole id="holeA"></rw-doorhole>
+		  		<rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
+			</rw-wall>
+    </rw-room>
+		<rw-room position="0 0 -3" outside="true">
+			<rw-wall position=" 1 0  1" material="color:#877">
+				<rw-doorhole id="holeB"></rw-doorhole>
+			</rw-wall>
+    </rw-room>
 
-      <a-camera>
-        <a-cursor id="cursor"></a-cursor>
-      </a-camera>
+    <!--Sofa-->
+    <a-gltf-model id="sofa" src="url(assets/sofa/scene.gltf)" position="4.143 1.9 0.272" scale="0.08 0.08 0.08" rotation="0 0 0"></a-gltf-model>
+    <!--Bed-->
+    <a-gltf-model id="bed"  src="url(assets/bed/scene.gltf)" scale=".4 .4 .4" position="1.402 1 4.851" rotation="0 90 0"></a-gltf-model>
+    <!--Duck-->
+    <a-gltf-model id="duck" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf" scale=".25 .25 .25" position="1.118 2.154 .98" rotation="0 -45 0"></a-gltf-model>
+    <!--Chair-->
+    <a-gltf-model id="chair" src="url(assets/chair/scene.gltf)" position="1.51 1 2.603" rotation="0 270 0" scale="1 .8 1"></a-gltf-model>
+    <!--OG table-->
+    <a-gltf-model id="og_table" src="url(assets/og_table.glb)" scale=".025 .03 .03" position=".271 1 1.844"></a-gltf-model>
+    <!--OG die-->
+    <a-gltf-model id="og_cup"   src="url(assets/og_cup.glb)" scale=".0095 .0095 .0095" position=".288 1.718 1.928" rotation="0 90 0"></a-gltf-model>
+    <!--OG cup-->
+    <a-gltf-model id="og_die"   src="url(assets/og_die.glb)" scale=".07 .07 .07" position=".039 1.056 -0.277" rotation="0 45 0" > </a-gltf-model>
 
-      <!--Lighting situation-->
-     <!-- <a-entity light="type: hemisphere; color: #33C; intensity: 0.5"></a-entity> -->
-    <a-entity light="type: directional; color: #EEE; intensity: 1.25" position="-1 20 45"></a-entity>
-
-    </a-scene>
-  </body>
+   	</a-scene>
+</body>
 </html>
+
