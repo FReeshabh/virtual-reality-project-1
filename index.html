@@ -1,79 +1,34 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>After Covid Scene</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
-  </head>
+    <head>
+        <title>Virtual Reality Project 1</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
 
-  <script>
-    function changeColor(color) {
-        document.querySelector('#light').emit(color);
-      };
-  </script>
+    </head>
+    <body>
+        <a-scene>
+            <!--Camera-->
+            <a-camera position="0 1.7 1.2"><a-cursor></a-cursor></a-camera>
 
-<body>
-	<a-scene>
-    <!--Camera-->
-    <a-camera position="2.883 2 3.015">
-      <a-cursor id="cursor">
-        <a-entity raycaster="far: 100; objects: .intersectable" cursor="fuse: true; fuseTimeout: 1000" geometry="primitive: ring; radiusOuter: 0.015;radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="2.883 2 3.015"></a-entity>
-      </a-cursor>
-    </a-camera>
-    <!-- <a-entity position="2.883 2 3.015">
-      <a-camera -->
+        <a-assets>
+          <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+        </a-assets>
+        <a-sky color="lightblue"></a-sky>
+        <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
+        <!--PreCovid Links-->
+        <a-entity id="beforeCovidLink" link="href: beforecovid.html; title:Before Covid; on: click" position="-1.6 2 -2" geometry="primitive:sphere; radius:.7" material="color:white"></a-entity>
+        <a-text id="beforeCovidText" value="Click here to go to pre-Covid times" geometry="primitive:plane" position="-2.478 3.118 -1.405" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
 
-    </a-entity>
+        <!--InCovid Links-->
+        <a-entity id="afterCovidLink" link="href:  aftercovid.html; title:After Covid; on: click" position="1.25 2 -2" geometry="primitive:sphere; radius:.7" material="color:black"></a-entity>
+        <a-text id="postCovidLink" value="Click here to go to Covid (present) times" geometry="primitive:plane" position=".5 3.118 -1.405" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
 
-    <!--Sky-->
-    <a-sky src="url(assets/skybox.jpg) rotation="0 -150 0"></a-sky>
-
-    <!-- Sea -->
-    <!-- <a-plane width="50" height="50" src="url(assets/sea.jpg)" rotation="-90 0 0" repeat="10 10"></a-plane>  -->
-
-    <!--Creating the room for the inside covid part-->
-		<rw-room position="0 1 0" material="color:#C5EAFA; src:url(assets/wall.jpg); repeat: 2 2">
-      <rw-ceiling position="0 0 0" material="color:#FFF; src:url(assets/ceiling.jpg); repeat:50 50"></rw-ceiling>
-      <rw-floor position="0 0 0" material="src:url(assets/floor.png); repeat: 2 2"></rw-floor>
-      <rw-wall position="6 0 0" height="3"></rw-wall>
-			<rw-wall position="4 0 6" height="3"></rw-wall>
-			<rw-wall position="0 0 6" height="3"></rw-wall>
-			<rw-wall position="0 0 0" height="3">
-          <rw-doorhole id="holeA"></rw-doorhole>
-		  		<rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
-			</rw-wall>
-    </rw-room>
-		<rw-room position="0 0 -3" outside="true">
-			<rw-wall position=" 1 0  1" material="color:#877">
-				<rw-doorhole id="holeB"></rw-doorhole>
-			</rw-wall>
-    </rw-room>
-
-    <!--Sofa-->
-    <a-gltf-model id="sofa" src="url(assets/sofa/scene.gltf)" position="4.143 1.9 0.272" scale="0.08 0.08 0.08" rotation="0 0 0"></a-gltf-model>
-    <!--Bed-->
-    <a-gltf-model id="bed"  src="url(assets/bed/scene.gltf)" scale=".4 .4 .4" position="1.402 1 4.851" rotation="0 90 0"></a-gltf-model>
-    <!--Duck-->
-    <a-gltf-model id="duck" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf" scale=".25 .25 .25" position="1.118 2.154 .98" rotation="0 -45 0"></a-gltf-model>
-    <!--Chair-->
-    <a-gltf-model id="chair" src="url(assets/chair/scene.gltf)" position="1.51 1 2.603" rotation="0 270 0" scale="1 .8 1"></a-gltf-model>
-    <!--OG table-->
-    <a-gltf-model id="og_table" src="url(assets/og_table.glb)" scale=".025 .03 .03" position=".271 1 1.844"></a-gltf-model>
-    <!--OG die-->
-    <a-gltf-model id="og_cup"   src="url(assets/og_cup.glb)" scale=".0095 .0095 .0095" position=".288 1.718 1.928" rotation="0 90 0"></a-gltf-model>
-    <!--OG cup-->
-    <a-gltf-model id="og_die"   src="url(assets/og_die.glb)" scale=".07 .07 .07" position=".039 1.056 -0.277" rotation="0 45 0" > </a-gltf-model>
-    <!--OG Darth Rishabh-->
-    <a-gltf-model id="OG_darth_rishabh" src="url(assets/darth rishabh.glb)" scale=".01 .01 .01" rotation="0 90 0" position=".373 1.755 3.223"></a-gltf-model>
-    <!--OG wall decoration-->
-    <a-gltf-model id="wall_decoration" src="url(assets/wall_decoration.glb)" scale=".01 .01 .01" rotation="90 -113.46 0" position="4.963 2.582 2.817" rotation="0 0 0"></a-gltf-model>
+        <!-- Ambient Light -->
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity>
 
 
-    <!-- Ambient Light -->
-    <a-entity light="type: ambient; color: #BBB"></a-entity>
-    <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity>
+        </a-scene>
+    </body>
 
-   	</a-scene>
-</body>
 </html>
-

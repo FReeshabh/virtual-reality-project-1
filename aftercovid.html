@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>After Covid Scene</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+  </head>
+
+  <script>
+    function changeColor(color) {
+        document.querySelector('#light').emit(color);
+      };
+  </script>
+
+<body>
+	<a-scene>
+    <a-assets>
+      <a-asset-item id="duck" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"></a-asset-item>
+    </a-assets>
+    <!--Camera-->
+    <a-camera position="2.883 2 3.015">
+      <a-cursor id="cursor">
+        <a-entity raycaster="far: 100; objects: .intersectable" cursor="fuse: true; fuseTimeout: 1000" geometry="primitive: ring; radiusOuter: 0.015;radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="2.883 2 3.015"></a-entity>
+      </a-cursor>
+    </a-camera>
+    <!-- <a-entity position="2.883 2 3.015">
+      <a-camera -->
+
+    </a-entity>
+
+    <!--Sky-->
+    <a-sky src="url(assets/skybox.jpg) rotation="0 -150 0"></a-sky>
+
+    <!-- Sea -->
+    <!-- <a-plane width="50" height="50" src="url(assets/sea.jpg)" rotation="-90 0 0" repeat="10 10"></a-plane>  -->
+
+    <!--Creating the room for the inside covid part-->
+		<rw-room position="0 1 0" material="color:#C5EAFA; src:url(assets/wall.jpg); repeat: 2 2">
+      <rw-ceiling position="0 0 0" material="color:#FFF; src:url(assets/ceiling.jpg); repeat:50 50"></rw-ceiling>
+      <rw-floor position="0 0 0" material="src:url(assets/floor.png); repeat: 2 2"></rw-floor>
+      <rw-wall position="6 0 0" height="3"></rw-wall>
+			<rw-wall position="4 0 6" height="3"></rw-wall>
+			<rw-wall position="0 0 6" height="3"></rw-wall>
+			<rw-wall position="0 0 0" height="3">
+          <rw-doorhole id="holeA"></rw-doorhole>
+		  		<rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
+			</rw-wall>
+    </rw-room>
+		<rw-room position="0 0 -3" outside="true">
+			<rw-wall position=" 1 0  1" material="color:#877">
+				<rw-doorhole id="holeB"></rw-doorhole>
+			</rw-wall>
+    </rw-room>
+
+    <!--Sofa-->
+    <a-gltf-model id="sofa" src="url(assets/sofa/scene.gltf)" position="4.143 1.9 0.272" scale="0.08 0.08 0.08" rotation="0 0 0"></a-gltf-model>
+    <!--Bed-->
+    <a-gltf-model id="bed"  src="url(assets/bed/scene.gltf)" scale=".4 .4 .4" position="1.402 1 4.851" rotation="0 90 0"></a-gltf-model>
+    <!--Duck-->
+    <a-entity gltf-model="#duck" scale=".25 .25 .25" position="1.118 2.154 .98" rotation="0 -45 0" sound="src:url(assets/MS_Realization.wav); on: click"></a-entity>
+    <a-text id="DuckAudioText" value="Click duck to play sound" geometry="primitive:plane" position=".33 2.992 1.721" scale=".7 1 1" material="color:black" rotation="0 46.32 0"></a-text>
+
+    <!--Chair-->
+    <a-gltf-model id="chair" src="url(assets/chair/scene.gltf)" position="1.51 1 2.603" rotation="0 270 0" scale="1 .8 1"></a-gltf-model>
+    <!--OG table-->
+    <a-gltf-model id="og_table" src="url(assets/og_table.glb)" scale=".025 .03 .03" position=".271 1 1.844"></a-gltf-model>
+    <!--OG die-->
+    <a-gltf-model id="og_cup"   src="url(assets/og_cup.glb)" scale=".0095 .0095 .0095" position=".288 1.718 1.928" rotation="0 90 0"></a-gltf-model>
+    <!--OG cup-->
+    <a-gltf-model id="og_die"   src="url(assets/og_die.glb)" scale=".07 .07 .07" position=".039 1.056 -0.277" rotation="0 45 0" > </a-gltf-model>
+    <!--OG Darth Rishabh-->
+    <a-gltf-model id="OG_darth_rishabh" src="url(assets/darth rishabh.glb)" scale=".01 .01 .01" rotation="0 90 0" position=".373 1.755 3.223"></a-gltf-model>
+    <!--OG wall decoration-->
+    <a-gltf-model id="wall_decoration" src="url(assets/wall_decoration.glb)" scale=".01 .01 .01" rotation="90 -113.46 0" position="4.963 2.582 2.817" rotation="0 0 0"></a-gltf-model>
+
+
+    <!-- Ambient Light -->
+    <a-entity light="type: ambient; color: #BBB"></a-entity>
+    <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity>
+
+   	</a-scene>
+</body>
+</html>
+
