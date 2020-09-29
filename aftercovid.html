@@ -54,9 +54,14 @@
     <!--Duck-->
     <a-entity gltf-model="#duck" scale=".25 .25 .25" position="1.118 2.154 .98" rotation="0 -45 0" sound="src:url(assets/MS_Realization.wav); on: click"></a-entity>
     <a-text id="DuckAudioText" value="Click duck to play sound" geometry="primitive:plane" position=".33 2.992 1.721" scale=".7 1 1" material="color:black" rotation="0 46.32 0"></a-text>
+    <!--Toilet paper stack-->
+    <a-gltf-model id="toilet_paper_stack" src="url(assets/toilet_paper_stack/scene.gltf)" position=".857 1.341 3.84" scale=".3 .3 .3" rotation="0 90 0"></a-gltf-model>
+    <a-gltf-model id="toilet_paper" src="url(assets/simple_toilet_paper_2.0/scene.gltf)" position="1 1.7 3.84" scale=".1 .1 .1" rotation="0 90 0"></a-gltf-model>
 
     <!--Chair-->
     <a-gltf-model id="chair" src="url(assets/chair/scene.gltf)" position="1.51 1 2.603" rotation="0 270 0" scale="1 .8 1"></a-gltf-model>
+    <!--Bookshelf-->
+    <a-gltf-model id="bookshelf" src="url(assets/book_shelf/scene.gltf)" position="3.944 1 5.189" rotation="0 -105 0"></a-gltf-model>
     <!--OG table-->
     <a-gltf-model id="og_table" src="url(assets/og_table.glb)" scale=".025 .03 .03" position=".271 1 1.844"></a-gltf-model>
     <!--OG die-->
@@ -69,12 +74,13 @@
     <a-gltf-model id="wall_decoration" src="url(assets/wall_decoration.glb)" scale=".01 .01 .01" rotation="90 -113.46 0" position="4.963 2.582 2.817" rotation="0 0 0"></a-gltf-model>
 
 
+
     <a-entity id="go_staging_area" link="href: index.html; title:Void Starting; on: click" position="2.646 2 -4" geometry="primitive:sphere; radius:.7" material="color:orange"></a-entity>
     <a-text id="Go staging area" value="Click here to go the Void Area" geometry="primitive:plane" position="2.3 3.118 -4.105" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
 
     <!-- Ambient Light -->
-    <a-entity light="type: ambient; color: #BBB"></a-entity>
-    <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity>
+    <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
+    <!-- <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity> -->
 <!-- 3.75 2 3.56 -->
 
     </a-scene>
