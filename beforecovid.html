@@ -31,20 +31,38 @@
         
         <!--Fox decoration-->
           <a-gltf-model id="fox" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Fox/glTF/Fox.gltf" position="9 0 -30" scale="0.02 0.02 0.02" rotation="0 45 0"></a-gltf-model>
+          <a-gltf-model id="fox" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Fox/glTF/Fox.gltf" position="-9 0 -45" scale="0.02 0.02 0.02" rotation="45 45 0"></a-gltf-model>
+
+          <!--House-->
+        <a-gltf-model id="house" src="url(assets/house.gltf)" position="68.645 0 -30.37" rotation="-180 82.853 -180"></a-gltf-model>
 
           <!--Animated girls fighting-->
           <a-gltf-model id="agirl" src="url(assets/agirl/scene.gltf)" position="-15 2 -15" scale=".01 .01 .01" animation-mixer></a-gltf-model>
           <a-gltf-model id="agirl" src="url(assets/agirl/scene.gltf)" position="-13 2 -15" scale=".01 .01 .01" rotation="0 -120 0" animation-mixer></a-gltf-model>
 
           <a-gltf-model id="old_rusty_car" src="url(assets/old_rusty_car/scene.gltf)" scale=".01 .01 .01" position="60 0 -8"></a-gltf-model>
+          <a-gltf-model id="old_rusty_car" src="url(assets/old_rusty_car/scene.gltf)" scale=".01 .01 .01" position="50 0 80"></a-gltf-model>
+
+          <a-gltf-model id="man1" src="url(assets/man/scene.gltf)" scale=".021 .01 .02" position="47.2 0 -29"></a-gltf-model>
+          <a-gltf-model id="man2" src="url(assets/man/scene.gltf)" scale=".01 .01 .01" position="4.72 0 -49"></a-gltf-model>
+          <a-gltf-model id="man2" src="url(assets/man/scene.gltf)" scale=".01 .01 .01" position="4.72 0 49" animation-mixer></a-gltf-model>
+          <a-gltf-model id="old-man" src="url(assets/old_man/scene.gltf)" scale=".01 .01 .01" position="0 0 -14" rotation="0 78 0" animation-mixer></a-gltf-model>
+          <a-gltf-model id="old-man" src="url(assets/old_man/scene.gltf)" scale=".01 .01 .01" position="0 0 14" rotation="0 78 0" animation-mixer></a-gltf-model>
+          <a-gltf-model id="old-man" src="url(assets/old_man/scene.gltf)" scale=".01 .01 .01" position="4 0 24" rotation="0 -78 0" animation-mixer></a-gltf-model>
+          <a-gltf-model id="old-man" src="url(assets/old_man/scene.gltf)" scale=".01 .01 .01" position="14 0 44" rotation="0 -78 0" animation-mixer></a-gltf-model>
+          <a-gltf-model id="old-man" src="url(assets/old_man/scene.gltf)" scale=".01 .01 .01" position="-40 0 40" rotation="0 -128 0" animation-mixer></a-gltf-model>
+
+          <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" light="color:#FFF;intensity:2">
+            <a-sphere position="50 30 0" color="grey" radius="5"></a-sphere>
+          </a-entity>
+
+          <a-entity id="go_staging_area" link="href: index.html; title:Void Starting; on: click" position="-1.6 2 -4" geometry="primitive:sphere; radius:.7" material="color:orange"></a-entity>
+          <a-text id="Go staging area" value="Click here to go the Void Area" geometry="primitive:plane" position="-2.478 3.118 -4.105" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
+
+          <a-text id="THE STORY" value="Pre-covid, I was out and around in the world. Especially in parks like these, with random foxes and fighting martial artists in the corner. But hasn't this disease led us to a much more of an inside and lonely path?" geometry="primitive:plane" position="-2.478 5.118 -4.105" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
 
 
-        <a-entity rotation="0 0 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" light="color:#FFF;intensity:2">
-          <a-sphere position="50 30 0" color="grey" radius="5"></a-sphere>
-        </a-entity>
 
-        <a-entity id="go_staging_area" link="href: index.html; title:Void Starting; on: click" position="-1.6 2 -4" geometry="primitive:sphere; radius:.7" material="src:https://learn.canva.com/wp-content/uploads/2015/11/texture.jpg"></a-entity>
-        <a-text id="Go staging area" value="Click here to go the Void Area" geometry="primitive:plane" position="-2.478 3.118 -4.105" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
 
 
 

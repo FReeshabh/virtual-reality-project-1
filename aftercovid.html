@@ -4,8 +4,10 @@
     <title>After Covid Scene</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+    <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> -->
   </head>
-
+  
   <script>
     function changeColor(color) {
         document.querySelector('#light').emit(color);
@@ -18,21 +20,14 @@
       <a-asset-item id="duck" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"></a-asset-item>
     </a-assets>
     <!--Camera-->
-    <a-camera position="2.883 2 3.015">
+    <a-camera position="3.883 2 3.015" >
       <a-cursor id="cursor">
         <a-entity raycaster="far: 100; objects: .intersectable" cursor="fuse: true; fuseTimeout: 1000" geometry="primitive: ring; radiusOuter: 0.015;radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="2.883 2 3.015"></a-entity>
       </a-cursor>
     </a-camera>
-    <!-- <a-entity position="2.883 2 3.015">
-      <a-camera -->
-
-    </a-entity>
 
     <!--Sky-->
     <a-sky src="url(assets/skybox.jpg) rotation="0 -150 0"></a-sky>
-
-    <!-- Sea -->
-    <!-- <a-plane width="50" height="50" src="url(assets/sea.jpg)" rotation="-90 0 0" repeat="10 10"></a-plane>  -->
 
     <!--Creating the room for the inside covid part-->
 		<rw-room position="0 1 0" material="color:#C5EAFA; src:url(assets/wall.jpg); repeat: 2 2">
@@ -74,16 +69,15 @@
     <a-gltf-model id="wall_decoration" src="url(assets/wall_decoration.glb)" scale=".01 .01 .01" rotation="90 -113.46 0" position="4.963 2.582 2.817" rotation="0 0 0"></a-gltf-model>
 
 
-    <a-entity id="go_staging_area" link="href: index.html; title:Void Starting; on: click" position="2.646 2 -4" geometry="primitive:sphere; radius:.7" material="src:https://learn.canva.com/wp-content/uploads/2015/11/texture.jpg"></a-entity>
+    <a-entity id="go_staging_area" link="href: index.html; title:Void Starting; on: click" position="2.646 2 -4" geometry="primitive:sphere; radius:.7" material="color:orange"></a-entity>
     <a-text id="Go staging area" value="Click here to go the Void Area" geometry="primitive:plane" position="2.3 3.118 -4.105" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
-
-
 
     <!-- Ambient Light -->
     <a-entity light="type: ambient; color: #BBB"></a-entity>
     <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity>
+<!-- 3.75 2 3.56 -->
 
-   	</a-scene>
+    </a-scene>
 </body>
 </html>
 
