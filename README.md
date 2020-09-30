@@ -41,3 +41,7 @@
 4. Darth Rishabh table decoration (3D gltf model)
 5. Wall decoration (3D gltf model)
 6. Portal Sphere
+
+## Code references
+* Aframe's excellent documentation: https://aframe.io/docs/1.0.0/introduction/
+* For the controllable lighting module: https://github.com/mBhakta95/Virtual-Reality

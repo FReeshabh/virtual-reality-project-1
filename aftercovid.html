@@ -7,12 +7,6 @@
     <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script> -->
     <!-- <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> -->
   </head>
-  
-  <script>
-    function changeColor(color) {
-        document.querySelector('#light').emit(color);
-      };
-  </script>
 
 <body>
 	<a-scene>
@@ -78,12 +72,35 @@
     <a-entity id="go_staging_area" link="href: index.html; title:Void Starting; on: click" position="2.646 2 -4" geometry="primitive:sphere; radius:.7" material="color:orange"></a-entity>
     <a-text id="Go staging area" value="Click here to go the Void Area" geometry="primitive:plane" position="2.3 3.118 -4.105" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
 
+    <a-text id="controllable light text" value="Click box to toggle light intensity level" color="black" position="3.0 2.4 .272" scale=".5 .5 .5"></a-text>
+    <a-box id="controllable_light" onclick="fourLevelLight()" color="black" material="side: double; repeat: 1 1" width=".1"
+           height=".1" depth=".1" position="3.143 1.9 0.272" rotation="0 -90 0"></a-box>
+
+    <a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6"></a-light>
+    <a-light id="light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
     <!-- Ambient Light -->
     <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
     <!-- <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity> -->
 <!-- 3.75 2 3.56 -->
 
     </a-scene>
+
+    <!--Function levels of light when clicked -->
+    <script>
+        function fourLevelLight() {
+            var light = document.querySelector('#light');
+            var current_intensity = light.getAttribute('intensity');
+
+            if (current_intensity == 1)
+                light.setAttribute('intensity', .5);
+            else if (current_intensity == .5)
+                light.setAttribute('intensity', 0);
+            else if (current_intensity == 0)
+                light.setAttribute('intensity', 2);
+            else
+                light.setAttribute('intensity', 1);
+        }
+    </script>
 </body>
 </html>
 
