@@ -1,4 +1,9 @@
 # Virtual Reality Project 1 - Rishabh Tewari
+This project is an individual project on creating a human scale scene, on how Covid 19 affected us. When opening up the project, we'll be transported to a 'Void' scene, with two transport orbs, for a pre-covid scene, and a post-covid (present) scene. The pre-covid scene showcases 'you' out and around in the real world, with other people, foxes, cars, etc. (and martial artists fighting!) The post covid scene transports us to a room (modelled after mine) where we are trapped, with interactive elements, and elements from the start of quarantine time (such as toilet paper).
+
+You can view the live demo [here](https://freeshabh.github.io/virtual-reality-project-1/)
+
+## Development
 
 ## Libraries and frameworks used
 * Aframe: https://aframe.io/releases/1.0.4/aframe.min.js
@@ -45,3 +50,4 @@
 ## Code references
 * Aframe's excellent documentation: https://aframe.io/docs/1.0.0/introduction/
 * For the controllable lighting module: https://github.com/mBhakta95/Virtual-Reality
+* Used a modified version of ocean-plane.js. For simulating water https://stackoverflow.com/questions/52837505/using-watershader-js-shader-in-aframe
