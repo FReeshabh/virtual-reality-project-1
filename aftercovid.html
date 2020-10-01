@@ -4,13 +4,9 @@
     <title>After Covid Scene</title>
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-room-component/dist/aframe-room-component.min.js"></script>
+    <!-- <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v4.1.2/dist/aframe-extras.min.js"></script> -->
+    <!-- <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script> -->
   </head>
-
-  <script>
-    function changeColor(color) {
-        document.querySelector('#light').emit(color);
-      };
-  </script>
 
 <body>
 	<a-scene>
@@ -18,21 +14,15 @@
       <a-asset-item id="duck" src="https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Duck/glTF/Duck.gltf"></a-asset-item>
     </a-assets>
     <!--Camera-->
-    <a-camera position="2.883 2 3.015">
+    <a-camera position="3.083 2 3.015" >
       <a-cursor id="cursor">
         <a-entity raycaster="far: 100; objects: .intersectable" cursor="fuse: true; fuseTimeout: 1000" geometry="primitive: ring; radiusOuter: 0.015;radiusInner: 0.01; segmentsTheta: 32" material="color: #283644; shader: flat" position="2.883 2 3.015"></a-entity>
       </a-cursor>
     </a-camera>
-    <!-- <a-entity position="2.883 2 3.015">
-      <a-camera -->
-
-    </a-entity>
 
     <!--Sky-->
     <a-sky src="url(assets/skybox.jpg) rotation="0 -150 0"></a-sky>
-
-    <!-- Sea -->
-    <!-- <a-plane width="50" height="50" src="url(assets/sea.jpg)" rotation="-90 0 0" repeat="10 10"></a-plane>  -->
+    <a-sky src="https://cdn.glitch.com/b870d9ec-1139-44f9-b462-223e4a2c74e7%2Fsechelt.jpg?1490307995926" radius="30"></a-sky>
 
     <!--Creating the room for the inside covid part-->
 		<rw-room position="0 1 0" material="color:#C5EAFA; src:url(assets/wall.jpg); repeat: 2 2">
@@ -59,9 +49,14 @@
     <!--Duck-->
     <a-entity gltf-model="#duck" scale=".25 .25 .25" position="1.118 2.154 .98" rotation="0 -45 0" sound="src:url(assets/MS_Realization.wav); on: click"></a-entity>
     <a-text id="DuckAudioText" value="Click duck to play sound" geometry="primitive:plane" position=".33 2.992 1.721" scale=".7 1 1" material="color:black" rotation="0 46.32 0"></a-text>
+    <!--Toilet paper stack-->
+    <a-gltf-model id="toilet_paper_stack" src="url(assets/toilet_paper_stack/scene.gltf)" position=".857 1.341 3.84" scale=".3 .3 .3" rotation="0 90 0"></a-gltf-model>
+    <a-gltf-model id="toilet_paper" src="url(assets/simple_toilet_paper_2.0/scene.gltf)" position="1 1.7 3.84" scale=".1 .1 .1" rotation="0 90 0"></a-gltf-model>
 
     <!--Chair-->
-    <a-gltf-model id="chair" src="url(assets/chair/scene.gltf)" position="1.51 1 2.603" rotation="0 270 0" scale="1 .8 1"></a-gltf-model>
+    <a-gltf-model id="wood_chair" src="url(assets/wood_chair/scene.gltf)" rotation="0 -90 0" scale=".6 .5 .6" position="1.313 1.518 2.695"></a-gltf-model>
+    <!--Bookshelf-->
+    <a-gltf-model id="bookshelf" src="url(assets/book_shelf/scene.gltf)" position="3.944 1 5.189" rotation="0 -105 0"></a-gltf-model>
     <!--OG table-->
     <a-gltf-model id="og_table" src="url(assets/og_table.glb)" scale=".025 .03 .03" position=".271 1 1.844"></a-gltf-model>
     <!--OG die-->
@@ -71,14 +66,66 @@
     <!--OG Darth Rishabh-->
     <a-gltf-model id="OG_darth_rishabh" src="url(assets/darth rishabh.glb)" scale=".01 .01 .01" rotation="0 90 0" position=".373 1.755 3.223"></a-gltf-model>
     <!--OG wall decoration-->
-    <a-gltf-model id="wall_decoration" src="url(assets/wall_decoration.glb)" scale=".01 .01 .01" rotation="90 -113.46 0" position="4.963 2.582 2.817" rotation="0 0 0"></a-gltf-model>
+    <a-gltf-model id="og_wall_decoration" src="url(assets/wall_decoration.glb)" scale=".01 .01 .01" rotation="90 -113.46 0" position="4.963 2.582 2.817" rotation="0 0 0"></a-gltf-model>
 
 
+
+    <a-entity id="go_staging_area" link="href: index.html; title:Void Starting; on: click" position="2.646 2 -4" geometry="primitive:sphere; radius:.7" material="color:orange"></a-entity>
+    <a-text id="Go staging area" value="Click here to go the Void Area" geometry="primitive:plane" position="2.3 3.118 -4.105" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
+
+    <a-text id="controllable light text" value="Click box to toggle light intensity level" color="black" position="3.0 2.4 .272" scale=".5 .5 .5"></a-text>
+    <a-box id="controllable_light" onclick="fourLevelLight()" color="black" material="side: double; repeat: 1 1" width=".1"
+           height=".1" depth=".1" position="3.143 1.9 0.272" rotation="0 -90 0"></a-box>
+
+    <a-light type="directional" color="grey" position="-.5 1 1" angle="60" decay="1" intensity=".6"></a-light>
+    <a-light id="light" type="ambient" color="white" position="0 0 0" angle="60" decay="1" intensity="1"></a-light>
     <!-- Ambient Light -->
-    <a-entity light="type: ambient; color: #BBB"></a-entity>
-    <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity>
+    <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
+    <!-- <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity> -->
 
-   	</a-scene>
+    <!-- Door -->
+    <a-entity geometry="primitive: box; depth: 1; height: 1; width: 1" material="visible: false;" onclick="openDoor()"
+              id="OnlyDoor" position="2 1 -0.05" class="intersectable" scale=".5 .5 .5">
+        <a-gltf-model src="assets/door/scene.gltf" scale="0.02 0.02 0.02"
+                      rotation="0 90 0"></a-gltf-model>
+    </a-entity>
+    <a-text id="doorText" value="Click on the door knob to open/close the door. (Door open by default)" position="2 3.3 .15" color="black" scale=".7 .7 .7"></a-text>
+    </a-scene>
+
+    <!--Function levels of light when clicked (Check README for citation) -->
+    <script>
+        function fourLevelLight() {
+            var light = document.querySelector('#light');
+            var current_intensity = light.getAttribute('intensity');
+            if (current_intensity == 1)
+                light.setAttribute('intensity', .5);
+            else if (current_intensity == .5)
+                light.setAttribute('intensity', 0);
+            else if (current_intensity == 0)
+                light.setAttribute('intensity', 2);
+            else
+                light.setAttribute('intensity', 1);
+        }
+    </script>
+
+<!-- Function for opening door (modified from original, check README.md) -->
+    <script>
+        var isOpened = false;
+        var isClosed = true;
+        function openDoor() {
+            var my_door = document.querySelector('#OnlyDoor');
+            if (isClosed) {
+                my_door.setAttribute('rotation', "0 270 0");
+                isOpened = true;
+                isClosed = false;
+            } else {
+                my_door.setAttribute('rotation', "0 360 0");
+                isOpened = false;
+                isClosed = true;
+            }
+        }
+    </script>
+
 </body>
 </html>
 
