@@ -11,6 +11,7 @@ When the application starts we're transported to an empty area with two transpor
 ![Image of the initial void area with the two orbs](assets/img/pic1-void.png)
 
 **Time to explore the pre-Covid-19 times area**
+
 For our initial purposes, let's explore the pre-covid scenes. Upon entering the pre covid area we're greeted with this initial scene.
 
 ![Pre-Covid Scene 1](assets/img/pic2-precovid-1.png)
@@ -26,6 +27,7 @@ This pre-covid scene has models that you can read about [here](#pre-covid-situat
 There's full sized houses that the user can explore, and walk around to look at the floating cube which changes it's color from red to blue, when the user points the cursor at it. There's also an orbiting orb in the sky for good luck! To navigate to different areas of the application, the user can click on the transport orb which will transport us back to the *magical* Void area.
 
 **Time to explore the Covid-19 times (present) area**
+
 After transporting to the Covid-19 times area from the *magical* Void area. We're greeted with this initial scene.
 
 ![Covid scene 1](assets/img/pic4-postcovid.png)
