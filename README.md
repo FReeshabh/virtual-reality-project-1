@@ -6,8 +6,15 @@ You can view the live demo [here](https://freeshabh.github.io/virtual-reality-pr
 You can also watch a video demo [here](#)
 
 ## Description
-When the application starts we're transported to an empty area with two transport orbs.
+When the application starts we're transported to an empty area with two transport orbs. These two transport links are in fact links to the respective covid, and pre-covid scenes created with Aframe. The user needs to point their camera cursor at the orb that they want to explore and click. This will load in the new scene.
 ![Image of the initial void area with the two orbs](assets/img/pic1-void.png)
+
+For our initial purposes, let's explore the pre-covid scenes. Upon entering the pre covid area we're greeted with this initial scene.
+![Pre0Covid Scene 1](assets/img/pic2-precovid-1.png)
+Moving our camera around a little, we can see there's more to this scene.
+![Pre-Covid Scene 2](assets/img/pic3-precovid-2.png)
+
+This `<a-scene>` is full of animated characters walking, fighting, and just relaxing in the wind. There's also a simulated pond, which is a result of a modified version of the ocean-plane.js file that I found on [glitch](https://glitch.com/edit/#!/acute-proximal-dog)
 
 
 ## Libraries and frameworks used
