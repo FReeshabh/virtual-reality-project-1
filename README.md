@@ -7,7 +7,7 @@ You can also watch a video demo [here](#)
 
 ## Description
 When the application starts we're transported to an empty area with two transport orbs.
-![Image of the initial void area with the two orbs] (assets/img/pic1-void.png)
+![Image of the initial void area with the two orbs](assets/img/pic1-void.png)
 
 
 ## Libraries and frameworks used
