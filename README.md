@@ -12,8 +12,11 @@ When the application starts we're transported to an empty area with two transpor
 
 **Time to explore the pre-Covid-19 times area**
 For our initial purposes, let's explore the pre-covid scenes. Upon entering the pre covid area we're greeted with this initial scene.
+
 ![Pre-Covid Scene 1](assets/img/pic2-precovid-1.png)
+
 Moving our camera around a little, we can see there's more to this scene.
+
 ![Pre-Covid Scene 2](assets/img/pic3-precovid-2.png)
 
 This `<a-scene>` is full of animated characters walking, fighting, and just relaxing in the wind. There's also a simulated pond, which is a result of a modified version of the ocean-plane.js file that I found on [glitch](https://glitch.com/edit/#!/acute-proximal-dog)
@@ -24,8 +27,11 @@ There's full sized houses that the user can explore, and walk around to look at 
 
 **Time to explore the Covid-19 times (present) area**
 After transporting to the Covid-19 times area from the *magical* Void area. We're greeted with this initial scene.
+
 ![Covid scene 1](assets/img/pic4-postcovid.png)
+
 We move the camera a bit to see what else is in the room
+
 ![Covid scene 2](assets/img/pic5-postcovid.png)
 
 This `<a-scene>` has interactable objects such as duck with a rather unsuited sound effect, an opening/closing door, and an adjustable light switch. Along with all these interactable objects, this scene also features 3D models that I designed myself! You can view these *made by me* models [here](#self-made-models-1), to view the all the models and textures used in this scene, go [here](#post-covid-present-situation).
