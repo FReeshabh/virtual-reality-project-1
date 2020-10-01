@@ -1,9 +1,14 @@
 # Virtual Reality Project 1 - Rishabh Tewari
-This project is an individual project on creating a human scale scene, on how Covid 19 affected us. When opening up the project, we'll be transported to a 'Void' scene, with two transport orbs, for a pre-covid scene, and a post-covid (present) scene. The pre-covid scene showcases 'you' out and around in the real world, with other people, foxes, cars, etc. (and martial artists fighting!) The post covid scene transports us to a room (modelled after mine) where we are trapped, with interactive elements, and elements from the start of quarantine time (such as toilet paper).
+This project is an individual project on creating a human scale scene, on how Covid 19 affected us. When opening up the project, we'll be transported to a *magical* 'Void' scene, with two transport orbs, for a pre-covid scene, and a post-covid (present) scene. 
+The pre-covid scene showcases 'you' out and around in the real world, with other people, foxes, cars, etc. (and martial artists fighting!) The post covid scene transports us to a room (modelled after mine) where we are trapped, with interactive elements, and elements from the start of quarantine time (such as toilet paper).
 
 You can view the live demo [here](https://freeshabh.github.io/virtual-reality-project-1/)
+You can also watch a video demo [here](#)
 
-## Development
+## Description
+When the application starts we're transported to an empty area with two transport orbs.
+![Image of the initial void area with the two orbs] (assets/img/pic1-void.png)
+
 
 ## Libraries and frameworks used
 * Aframe: https://aframe.io/releases/1.0.4/aframe.min.js
@@ -11,7 +16,7 @@ You can view the live demo [here](https://freeshabh.github.io/virtual-reality-pr
 * Aframe extras: https://www.npmjs.com/package/aframe-extras
 
 ## Model and Image Citations
-# Void Area (The teleportation area)
+### Void Area (The teleportation area)
 1. Ground (Texture): https://cdn.aframe.io/a-painter/images/floor.jpg
 2. Sky (Texture): https://wallpaperaccess.com/full/149370.jpg
 
@@ -54,5 +59,5 @@ Blue Wooden Chair (3D gltf model):  https://sketchfab.com/3d-models/wooden-chair
 
 ## Code references
 * Aframe's excellent documentation: https://aframe.io/docs/1.0.0/introduction/
-* For the controllable lighting module: https://github.com/mBhakta95/Virtual-Reality
+* For the controllable lighting and door opening module (I modified the code): https://github.com/mBhakta95/Virtual-Reality
 * Used a modified version of ocean-plane.js. For simulating water https://stackoverflow.com/questions/52837505/using-watershader-js-shader-in-aframe
