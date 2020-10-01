@@ -27,7 +27,7 @@ This pre-covid scene has models that you can read about [here](#pre-covid-situat
 **About the water area**
 This code was modified from this project I found on [glitch](https://glitch.com/edit/#!/acute-proximal-dog)
 
-`
+```
 AFRAME.registerComponent('wobble-normal', {
 	schema: {},
 	tick: function (t) {
@@ -62,7 +62,7 @@ AFRAME.registerPrimitive('a-ocean-plane', {
 	},
 });
 
-`
+```
 
 There's full sized houses that the user can explore, and walk around to look at the floating cube which changes it's color from red to blue, when the user points the cursor at it. There's also an orbiting orb in the sky for good luck! To navigate to different areas of the application, the user can click on the transport orb which will transport us back to the *magical* Void area.
 
@@ -84,7 +84,7 @@ There's a few easter eggs in the models made and imported. Features such as the 
 
 The room component in the post covid scene did not use primitives, but used Aframe's room component that can be found [here](https://github.com/omgitsraven/aframe-room-component). 
 
-`
+```
 <rw-room position="0 1 0" material="color:#C5EAFA; src:url(assets/wall.jpg); repeat: 2 2">
     <rw-ceiling position="0 0 0" material="color:#FFF; src:url(assets/ceiling.jpg); repeat:50 50"></rw-ceiling>
     <rw-floor position="0 0 0" material="src:url(assets/floor.png); repeat: 2 2"></rw-floor>
@@ -101,22 +101,23 @@ The room component in the post covid scene did not use primitives, but used Afra
 		<rw-doorhole id="holeB"></rw-doorhole>
 	</rw-wall>
   </rw-room>
-`
+```
 
 In hindsight, using simple primitives for the room would have sufficed, and would have probably been easier. However, I originally planned a bunch of rooms connected to each other until I realized that I live by myself in my own room, and have spent most of quarantine that way.
 
 **The interactive door**
+
 The code was originally modified from [mBhakta95'swork](https://github.com/mBhakta95/Virtual-Reality). This little script is the whole reason this door can close.
 
 ![closed door](assets/img/pic6-closeddoor.png)
 
 <p align="center">Closed Door</p>
 
-![open door] (assets/img/pic7opendoor.png)
+![open door](assets/img/pic7opendoor.png)
 
 <p align="center">Open Door</p>
 
-`
+```
 <script>
         var isOpened = false;
         var isClosed = true;
@@ -133,10 +134,12 @@ The code was originally modified from [mBhakta95'swork](https://github.com/mBhak
             }
         }
     </script>
-`
+```
 
 **The light switch**
+
 Here's 4 pictures comparing the brightness adjusted by the light switch.
+
 ![Different light levels](assets/img/pic-11-light4.png)
 
 ![Different light levels](assets/img/pic8-light1.png)
@@ -147,7 +150,7 @@ Here's 4 pictures comparing the brightness adjusted by the light switch.
 
 The code was originally modified from [mBhakta95'swork](https://github.com/mBhakta95/Virtual-Reality). This little script is the whole reason you can adjust light levels in the application.
 
-`
+```
     <script>
         function fourLevelLight() {
             var light = document.querySelector('#light');
@@ -162,7 +165,7 @@ The code was originally modified from [mBhakta95'swork](https://github.com/mBhak
                 light.setAttribute('intensity', 1);
         }
     </script>
-`
+```
 
 
 ## Libraries and frameworks used
