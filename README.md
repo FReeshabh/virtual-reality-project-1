@@ -119,21 +119,21 @@ The code was originally modified from [mBhakta95'swork](https://github.com/mBhak
 
 ```
 <script>
-        var isOpened = false;
-        var isClosed = true;
-        function openDoor() {
-            var my_door = document.querySelector('#OnlyDoor');
-            if (isClosed) {
-                my_door.setAttribute('rotation', "0 270 0");
-                isOpened = true;
-                isClosed = false;
-            } else {
-                my_door.setAttribute('rotation', "0 360 0");
-                isOpened = false;
-                isClosed = true;
-            }
+    var isOpened = false;
+    var isClosed = true;
+    function openDoor() {
+        var my_door = document.querySelector('#OnlyDoor');
+        if (isClosed) {
+            my_door.setAttribute('rotation', "0 270 0");
+            isOpened = true;
+            isClosed = false;
+        } else {
+            my_door.setAttribute('rotation', "0 360 0");
+            isOpened = false;
+            isClosed = true;
         }
-    </script>
+    }
+</script>
 ```
 
 **The light switch**
@@ -151,20 +151,20 @@ Here's 4 pictures comparing the brightness adjusted by the light switch.
 The code was originally modified from [mBhakta95'swork](https://github.com/mBhakta95/Virtual-Reality). This little script is the whole reason you can adjust light levels in the application.
 
 ```
-    <script>
-        function fourLevelLight() {
-            var light = document.querySelector('#light');
-            var current_intensity = light.getAttribute('intensity');
-            if (current_intensity == 1)
-                light.setAttribute('intensity', .5);
-            else if (current_intensity == .5)
-                light.setAttribute('intensity', 0);
-            else if (current_intensity == 0)
-                light.setAttribute('intensity', 2);
-            else
-                light.setAttribute('intensity', 1);
-        }
-    </script>
+<script>
+    function fourLevelLight() {
+        var light = document.querySelector('#light');
+        var current_intensity = light.getAttribute('intensity');
+        if (current_intensity == 1)
+            light.setAttribute('intensity', .5);
+        else if (current_intensity == .5)
+            light.setAttribute('intensity', 0);
+        else if (current_intensity == 0)
+            light.setAttribute('intensity', 2);
+        else
+            light.setAttribute('intensity', 1);
+    }
+</script>
 ```
 
 
