@@ -54,7 +54,7 @@
     <a-gltf-model id="toilet_paper" src="url(assets/simple_toilet_paper_2.0/scene.gltf)" position="1 1.7 3.84" scale=".1 .1 .1" rotation="0 90 0"></a-gltf-model>
 
     <!--Chair-->
-    <a-gltf-model id="chair" src="url(assets/chair/scene.gltf)" position="1.51 1 2.603" rotation="0 270 0" scale="1 .8 1"></a-gltf-model>
+    <a-gltf-model id="wood_chair" src="url(assets/wood_chair/scene.gltf)" rotation="0 -90 0" scale=".6 .5 .6" position="1.313 1.518 2.695"></a-gltf-model>
     <!--Bookshelf-->
     <a-gltf-model id="bookshelf" src="url(assets/book_shelf/scene.gltf)" position="3.944 1 5.189" rotation="0 -105 0"></a-gltf-model>
     <!--OG table-->
@@ -66,7 +66,7 @@
     <!--OG Darth Rishabh-->
     <a-gltf-model id="OG_darth_rishabh" src="url(assets/darth rishabh.glb)" scale=".01 .01 .01" rotation="0 90 0" position=".373 1.755 3.223"></a-gltf-model>
     <!--OG wall decoration-->
-    <a-gltf-model id="wall_decoration" src="url(assets/wall_decoration.glb)" scale=".01 .01 .01" rotation="90 -113.46 0" position="4.963 2.582 2.817" rotation="0 0 0"></a-gltf-model>
+    <a-gltf-model id="og_wall_decoration" src="url(assets/wall_decoration.glb)" scale=".01 .01 .01" rotation="90 -113.46 0" position="4.963 2.582 2.817" rotation="0 0 0"></a-gltf-model>
 
 
 
@@ -82,11 +82,17 @@
     <!-- Ambient Light -->
     <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
     <!-- <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity> -->
-<!-- 3.75 2 3.56 -->
 
+    <!-- Door -->
+    <a-entity geometry="primitive: box; depth: 1; height: 1; width: 1" material="visible: false;" onclick="openDoor()"
+              id="OnlyDoor" position="2 1 -0.05" class="intersectable" scale=".5 .5 .5">
+        <a-gltf-model src="assets/door/scene.gltf" scale="0.02 0.02 0.02"
+                      rotation="0 90 0"></a-gltf-model>
+    </a-entity>
+    <a-text id="doorText" value="Click on the door knob to open/close the door. (Door open by default)" position="2 3.3 .15" color="black" scale=".7 .7 .7"></a-text>
     </a-scene>
 
-    <!--Function levels of light when clicked -->
+    <!--Function levels of light when clicked (Check README for citation) -->
     <script>
         function fourLevelLight() {
             var light = document.querySelector('#light');
@@ -102,6 +108,27 @@
                 light.setAttribute('intensity', 1);
         }
     </script>
+
+<!-- Function for opening door (modified from original, check README.md) -->
+    <script>
+        var isOpened = false;
+        var isClosed = true;
+        function openDoor() {
+
+            var my_door = document.querySelector('#OnlyDoor');
+            if (isClosed) {
+                my_door.setAttribute('rotation', "0 270 0");
+                isOpened = true;
+                isClosed = false;
+            }
+            else {
+                my_door.setAttribute('rotation', "0 360 0");
+                isOpened = false;
+                isClosed = true;
+            }
+        }
+    </script>
+
 </body>
 </html>
 
