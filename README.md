@@ -32,7 +32,7 @@ After transporting to the Covid-19 times area from the *magical* Void area. We'r
 
 We move the camera a bit to see what else is in the room
 
-![Covid scene 2](assets/img/pic5-postcovid.png)
+![Covid scene 2](assets/img/pic5postcovid.png)
 
 This `<a-scene>` has interactable objects such as duck with a rather unsuited sound effect, an opening/closing door, and an adjustable light switch. Along with all these interactable objects, this scene also features 3D models that I designed myself! You can view these *made by me* models [here](#self-made-models-1), to view the all the models and textures used in this scene, go [here](#post-covid-present-situation).
 
