@@ -24,6 +24,46 @@ This `<a-scene>` is full of animated characters walking, fighting, and just rela
 
 This pre-covid scene has models that you can read about [here](#pre-covid-situation). This scene represents how us and the world were before the pandemic, with people walking around, and being together. 
 
+**About the water area**
+This code was modified from this project I found on [glitch](https://glitch.com/edit/#!/acute-proximal-dog)
+
+`
+AFRAME.registerComponent('wobble-normal', {
+	schema: {},
+	tick: function (t) {
+		if (!this.el.components.material.material.normalMap) return;
+		this.el.components.material.material.normalMap.offset.x += 0.0001 * Math.sin(t/10000);
+		this.el.components.material.material.normalMap.offset.y += 0.0001 * Math.cos(t/8000);
+		this.el.components.material.material.normalScale.x = 0.5 + 0.5 * Math.cos(t/1000);
+		this.el.components.material.material.normalScale.x = 0.5 + 0.5 * Math.sin(t/1200);
+	}
+})
+
+AFRAME.registerPrimitive('a-ocean-plane', {
+	defaultComponents: {
+		geometry: {
+            primitive: 'circle',
+            radius:'20'
+
+		},
+		rotation: '-90 0 0',
+		material: {
+			shader: 'standard',
+			color: '#8ab39f',
+			metalness: 1,
+			roughness: 0.2,
+			normalMap: 'url(https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/waternormals.jpg)',
+			normalTextureRepeat: '50 50',
+			normalTextureOffset: '0 0',
+			normalScale: '0.5 0.5',
+			opacity: 1.0
+		},
+		'wobble-normal': {}
+	},
+});
+
+`
+
 There's full sized houses that the user can explore, and walk around to look at the floating cube which changes it's color from red to blue, when the user points the cursor at it. There's also an orbiting orb in the sky for good luck! To navigate to different areas of the application, the user can click on the transport orb which will transport us back to the *magical* Void area.
 
 **Time to explore the Covid-19 times (present) area**
@@ -38,7 +78,91 @@ We move the camera a bit to see what else is in the room
 
 This `<a-scene>` has interactable objects such as duck with a rather unsuited sound effect, an opening/closing door, and an adjustable light switch. Along with all these interactable objects, this scene also features 3D models that I designed myself! You can view these *made by me* models [here](#self-made-models-1), to view the all the models and textures used in this scene, go [here](#post-covid-present-situation).
 
+There's a few easter eggs in the models made and imported. Features such as the toilet paper craze, which was a feature at the start of the pandemic, and my thoughts on VR at the present, and the cool Darth Vader model (made by me :)) 
 
+**About the room**
+
+The room component in the post covid scene did not use primitives, but used Aframe's room component that can be found [here](https://github.com/omgitsraven/aframe-room-component). 
+
+`
+<rw-room position="0 1 0" material="color:#C5EAFA; src:url(assets/wall.jpg); repeat: 2 2">
+    <rw-ceiling position="0 0 0" material="color:#FFF; src:url(assets/ceiling.jpg); repeat:50 50"></rw-ceiling>
+    <rw-floor position="0 0 0" material="src:url(assets/floor.png); repeat: 2 2"></rw-floor>
+    <rw-wall position="6 0 0" height="3"></rw-wall>
+	<rw-wall position="4 0 6" height="3"></rw-wall>
+	<rw-wall position="0 0 6" height="3"></rw-wall>
+	<rw-wall position="0 0 0" height="3">
+        <rw-doorhole id="holeA"></rw-doorhole>
+  		<rw-doorlink from="#holeA" to="#holeB" position="2.5 0 0"></rw-doorlink>
+	</rw-wall>
+  </rw-room>
+<rw-room position="0 0 -3" outside="true">
+	<rw-wall position=" 1 0  1" material="color:#877">
+		<rw-doorhole id="holeB"></rw-doorhole>
+	</rw-wall>
+  </rw-room>
+`
+
+In hindsight, using simple primitives for the room would have sufficed, and would have probably been easier. However, I originally planned a bunch of rooms connected to each other until I realized that I live by myself in my own room, and have spent most of quarantine that way.
+
+**The interactive door**
+The code was originally modified from [mBhakta95'swork](https://github.com/mBhakta95/Virtual-Reality). This little script is the whole reason this door can close.
+
+![closed door](assets/img/pic6-closeddoor.png)
+
+<p align="center">Closed Door</p>
+
+![open door] (assets/img/pic7opendoor.png)
+
+<p align="center">Open Door</p>
+
+`
+<script>
+        var isOpened = false;
+        var isClosed = true;
+        function openDoor() {
+            var my_door = document.querySelector('#OnlyDoor');
+            if (isClosed) {
+                my_door.setAttribute('rotation', "0 270 0");
+                isOpened = true;
+                isClosed = false;
+            } else {
+                my_door.setAttribute('rotation', "0 360 0");
+                isOpened = false;
+                isClosed = true;
+            }
+        }
+    </script>
+`
+
+**The light switch**
+Here's 4 pictures comparing the brightness adjusted by the light switch.
+![Different light levels](assets/img/pic-11-light4.png)
+
+![Different light levels](assets/img/pic8-light1.png)
+
+![Different light levels](assets/img/pic9-light2.png)
+
+![Different light levels](assets/img/pic10-light3.png)
+
+The code was originally modified from [mBhakta95'swork](https://github.com/mBhakta95/Virtual-Reality). This little script is the whole reason you can adjust light levels in the application.
+
+`
+    <script>
+        function fourLevelLight() {
+            var light = document.querySelector('#light');
+            var current_intensity = light.getAttribute('intensity');
+            if (current_intensity == 1)
+                light.setAttribute('intensity', .5);
+            else if (current_intensity == .5)
+                light.setAttribute('intensity', 0);
+            else if (current_intensity == 0)
+                light.setAttribute('intensity', 2);
+            else
+                light.setAttribute('intensity', 1);
+        }
+    </script>
+`
 
 
 ## Libraries and frameworks used
