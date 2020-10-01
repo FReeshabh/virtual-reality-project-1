@@ -3,32 +3,31 @@
     <head>
         <title>Virtual Reality Project 1</title>
         <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-
     </head>
+
     <body>
         <a-scene>
             <!--Camera-->
             <a-camera position="0 1.7 1.2"><a-cursor ></a-cursor></a-camera>
 
-        <a-assets>
-          <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
-        </a-assets>
-        <!-- <a-sky src="https://cdn.glitch.com/b870d9ec-1139-44f9-b462-223e4a2c74e7%2Fsechelt.jpg?1490307995926" radius="30"></a-sky> -->
-        <a-sky src="url(assets/skybox.jpg) rotation="0 -150 0"></a-sky>
-        <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
-        <!--PreCovid Links-->
-        <a-entity id="beforeCovidLink" link="href: beforecovid.html; title:Before Covid; on: click" position="-1.6 2 -2" geometry="primitive:sphere; radius:.7" material="color:white"></a-entity>
-        <a-text id="beforeCovidText" value="Click here to go to pre-Covid times" geometry="primitive:plane" position="-2.478 3.118 -1.405" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
+            <a-assets>
+              <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg">
+            </a-assets>
 
-        <!--InCovid Links-->
-        <a-entity id="afterCovidLink" link="href:  aftercovid.html; title:After Covid; on: click" position="1.25 2 -2" geometry="primitive:sphere; radius:.7" material="color:black"
-        ></a-entity>
-        <a-text id="postCovidLink" value="Click here to go to Covid (present) times" geometry="primitive:plane" position=".5 3.118 -1.405" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
+            <!--Sky-->
+            <a-sky src="url(assets/skybox.jpg) rotation="0 -150 0"></a-sky>
 
-        <!-- Ambient Light -->
-        <!-- <a-entity light="type: ambient; color: #BBB"></a-entity> -->
-        <!-- <a-entity light="type: point; color: #ACB" position="0 2 0"></a-entity> -->
+            <!--Ground-->
+            <a-plane src="#groundTexture" rotation="-90 0 0" width="30" height="30"></a-plane>
 
+            <!--PreCovid Links-->
+            <a-entity id="beforeCovidLink" link="href: beforecovid.html; title:Before Covid; on: click" position="-1.6 2 -2" geometry="primitive:sphere; radius:.7" material="color:white"></a-entity>
+            <a-text id="beforeCovidText" value="Click here to go to pre-Covid times" geometry="primitive:plane" position="-2.478 3.118 -1.405" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
+
+            <!--InCovid Links-->
+            <a-entity id="afterCovidLink" link="href:  aftercovid.html; title:After Covid; on: click" position="1.25 2 -2" geometry="primitive:sphere; radius:.7" material="color:black"
+            ></a-entity>
+            <a-text id="postCovidLink" value="Click here to go to Covid (present) times" geometry="primitive:plane" position=".5 3.118 -1.405" scale=".7 1 1" material="color:black" rotation="0 0 0"></a-text>
 
         </a-scene>
     </body>

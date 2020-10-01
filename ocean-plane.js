@@ -1,6 +1,3 @@
-
-// Requires a build from the latest a-frame master (August 2016, v0.3)
-
 AFRAME.registerComponent('wobble-normal', {
 	schema: {},
 	tick: function (t) {
