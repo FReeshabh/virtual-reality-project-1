@@ -174,6 +174,23 @@ The code was originally modified from [mBhakta95'swork](https://github.com/mBhak
 </script>
 ```
 
+## Requirements for the project
+
+### For a C
+- [x] At least 10 unique models in appropriate locations
+- [x] Appropriate lighting
+
+### For a B
+- [x] 5 unique models that I built myslef
+- [x] Gave user control over lighting
+- [x] User can navigate around all the spaces
+- [x] User has access to Covid Mode and pre covid by travelling through the *magic* transport orb
+
+### For an A
+- [x] There's multiple moving, and animated objects including models and primitives
+- [x] User is able to interact with certain objects to trigger a sound effect, toggle light levels, or toggle their rotation/position.
+
+All conditions that were stated in the project description have been met here, although it might be worded differently.
 
 ## Libraries and frameworks used
 * Aframe: https://aframe.io/releases/1.0.4/aframe.min.js
