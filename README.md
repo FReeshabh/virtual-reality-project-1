@@ -3,9 +3,12 @@ This project is an individual project on creating a human scale scene, on how Co
 
 The pre-covid scene showcases 'you' out and around in the real world, with other people, foxes, cars, etc. (and martial artists fighting!) The post covid scene transports us to a room (modelled after mine) where we are trapped, with interactive elements, and elements from the start of quarantine time (such as toilet paper).
 
+You can also watch a video demo here by clicking on the image below
+
+![Youtube Link](https://img.youtube.com/vi/CMYZBXiZqtQ/0.jpg)
+
 You can view the live demo [here](https://freeshabh.github.io/virtual-reality-project-1/)
 
-You can also watch a video demo [here](#)
 
 ## Description
 When the application starts we're transported to an empty area with two transport orbs. These two transport links are in fact links to the respective covid, and pre-covid scenes created with Aframe. The user needs to point their camera cursor at the orb that they want to explore and click. This will load in the new scene.
