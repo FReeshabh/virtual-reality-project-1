@@ -8,7 +8,7 @@ This project is an individual project on creating a human scale scene, on how Co
 
 The pre-covid scene showcases 'you' out and around in the real world, with other people, foxes, cars, etc. (and martial artists fighting!) The post covid scene transports us to a room (modelled after mine) where we are trapped, with interactive elements, and elements from the start of quarantine time (such as toilet paper).
 
-You can also watch a video demo here by clicking [here](https://youtu.be/CMYZBXiZqtQ)
+You can also watch a video demo here by clicking
 
 You can view the live demo [here](https://freeshabh.github.io/virtual-reality-project-1/)
 
